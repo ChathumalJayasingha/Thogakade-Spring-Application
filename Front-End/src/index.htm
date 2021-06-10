@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple POS</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #mainMenu {
+            display: block;
+        }
+
+        #customerMenu {
+            display: none;
+        }
+
+        #orderMenu {
+            display: none;
+        }
+
+        #itemMenu {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse pl-4" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <p>Chathumal</p>
+                <li class="nav-item" id="linkHome">
+                    <a class="nav-link"><button type="button" class="btn btn-outline-primary">Home</button> </a>
+                </li>
+                <li class="nav-item" id="linkCustomer">
+                    <a class="nav-link"><button type="button" class="btn btn-dark">Customer</button></a>
+                </li>
+                <li class="nav-item" id="linkItem">
+                    <a class="nav-link"><button type="button" class="btn btn-dark">Item</button></a>
+                </li>
+                <li class="nav-item" id="linkOrder">
+                    <a class="nav-link"><button type="button" class="btn btn-dark">Orders</button></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div id="mainMenu">
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/img/customer-icon_357587.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title ">Customer</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="" class="btn btn-success">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/img/christmas-birthday-gift_225447.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Items</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/img/infographics-design-template_403459.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ordes</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="" class="btn btn-danger">Go somewhere</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="customerMenu">
+    <section class="container-fluid bg-info p-3">
+        <h1 class="text-white">Customer Manage</h1>
+    </section>
+    <section class="container-fluid">
+        <section class="row mt-3">
+            <section class="col-md-4">
+                <form id="frmCustomer" >
+                    <div>
+                        <label class="form-label" for="id">Customer ID</label>
+                        <input class="form-control" id="id" name="id" type="text">
+                    </div>
+                    <div>
+                        <label class="form-label" for="name">Customer Name</label>
+                        <input class="form-control" id="name" name="name" type="text">
+                    </div>
+                    <div>
+                        <label class="form-label" for="address">Customer Address</label>
+                        <input class="form-control" id="address" name="address" type="text">
+                    </div>
+                    <div>
+                        <label class="form-label" for="salary">Customer Salary</label>
+                        <input class="form-control" id="salary" name="salary" type="number">
+                    </div>
+                    <div class="btn-group mt-3">
+                        <button class="btn btn-primary" id="btnSave" type="button">Register Customer</button>
+                        <button class="btn btn-info" id="btnSearch" type="button">Search</button>
+                        <button class="btn btn-danger" id="btnRemove" type="button">Remove</button>
+                        <button class="btn btn-warning" id="btnGetAll" type="button">Get All</button>
+                        <button class="btn btn-outline-danger" id="btnUpdate" type="button">Update</button>
+                        <button class="btn btn-outline-info" id="btnClear" type="button">Clear</button>
+                    </div>
+                </form>
+            </section>
+            <section class="col-md-8">
+                <table class="table table-hover table-bordered">
+                    <thead class="bg-danger text-white">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Salary</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tBody">
+
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section>
+</div>
+
+
+
+<div id="itemMenu">
+    <section class="container-fluid bg-info p-3">
+        <h1 class="text-white">Item Manage</h1>
+    </section>
+    <section class="container-fluid">
+        <section class="row mt-3">
+            <section class="col-md-4">
+                <form id="frmItem" >
+                    <div>
+                        <label class="form-label" for="code">code</label>
+                        <input class="form-control" id="code" name="code" type="text">
+                    </div>
+                    <div>
+                        <label class="form-label" for="description">description</label>
+                        <input class="form-control" id="description" name="description" type="text">
+                    </div>
+                    <div>
+                        <label class="form-label" for="qty">Quantity</label>
+                        <input class="form-control" id="qty" name="qty" type="number">
+                    </div>
+                    <div>
+                        <label class="form-label" for="unitPrice">Unit Price</label>
+                        <input class="form-control" id="unitPrice" name="unitPrice" type="number">
+                    </div>
+                    <div class="btn-group mt-3">
+                        <button class="btn btn-primary" id="btnItemSave" type="button">Save Item</button>
+                        <button class="btn btn-info" id="btnItemSearch" type="button">Search Item</button>
+                        <button class="btn btn-danger" id="btnItemRemove" type="button">Remove Item</button>
+                        <button class="btn btn-warning" id="btnItemGetAll" type="button">Get All Item</button>
+                        <button class="btn btn-outline-danger" id="btnItemUpdate" type="button">Item Update</button>
+                        <button class="btn btn-outline-info" id="btnItemClear" type="button">Item Clear</button>
+                    </div>
+                </form>
+            </section>
+            <section class="col-md-8">
+                <table class="table table-hover table-bordered">
+                    <thead class="bg-danger text-white">
+                    <tr>
+                        <th>Code</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tBodyItem">
+
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section>
+</div>
+
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="controller/dashBoardController.js"></script>
+<script src="controller/customerController.js"></script>
+<script>
+
+    function clearTextItem() {
+        $("#code").val("");
+        $("#description").val("");
+        $("#qty").val("");
+        $("#unitPrice").val("");
+    }
+
+    $("#btnItemClear").click(()=>{
+        clearTextItem();
+    });
+
+    $("#btnItemSearch").click(function () {
+        let code = $("#code").val();
+        $.ajax({
+            url: 'http://localhost:8080/Thogakade_Spring_war/item?code=' + code,
+            method: 'get',
+            async: true,
+            success: function (data, responseState, xhr) {
+                console.log(data);
+                loadAllItems();
+                clearTextItem();
+            }
+        });
+    });
+    $("#btnItemRemove").click(function () {
+        let code = $("#code").val();
+        $.ajax({
+            url: 'http://localhost:8080/Thogakade_Spring_war/item?code=' + code,
+            method: 'delete',
+            async: true,
+            success: function (data, textState, xhr) {
+                console.log(data);
+                loadAllItems();
+                clearTextItem();
+            }
+        });
+    });
+
+
+    $("#btnItemSave").click(function () {
+
+        let code = $("#code").val();
+        let description = $("#description").val();
+        let qty = $("#qty").val();
+        let unitPrice = $("#unitPrice").val();
+
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/Thogakade_Spring_war/item",
+            contentType: 'application/json',
+            async: true,
+            data: JSON.stringify({
+                code: code,
+                description: description,
+                qty: qty,
+                unitPrice: unitPrice
+            }),
+            success: function (data) {
+                console.log(data);
+                loadAllItems();
+                clearTextItem();
+            }
+        });
+
+
+    });
+
+    $("#btnItemGetAll").click(()=>{
+        loadAllItems();
+    });
+
+    function loadAllItems() {
+        $("#tBodyItem").empty();
+
+        $.ajax({
+            url: "http://localhost:8080/Thogakade_Spring_war/item",
+            method: 'get',
+            async: true,
+            dataType:"json",
+            success: function (data, textState, xhr) {
+                for (let item of data.data) {
+                    $("#tBodyItem").append(`<tr><td>${item.code}</td><td>${item.description}</td><td>${item.qty}</td><td>${item.unitPrice}</td></tr>`);
+                }
+            }
+        });
+    }
+
+
+    $("#btnItemUpdate").click(function () {
+        let code = $("#code").val();
+        let description = $("#description").val();
+        let qty = $("#qty").val();
+        let unitPrice = $("#unitPrice").val();
+
+        $.ajax({
+            url: "http://localhost:8080/Thogakade_Spring_war/item",
+            method: 'put',
+            async: true,
+            contentType: "application/json",
+            data: JSON.stringify({
+                code: code,
+                description: description,
+                qty: qty,
+                unitPrice: unitPrice
+            }),
+            success: function (data, responseState, xhr) {
+                console.log(data);
+                loadAllItems();
+                clearTextItem();
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>
